@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    <title>BINGO</title>
+</head>
+<body>
+    <div class="col d-flex  justify-content-center bg-info" style="min-width:660px">
+    <div class="card text-center mb-3" >
+        <div class="card-header text-center text-nowrap font-weight-bold mb-3">
+          <span style="color:goldenrod">B</span><span style="color:blue">I</span></span><span style="color:green">N</span></span><span style="color:brown">G</span></span><span style="color:rebeccapurple">O</span>
+        </div>
+        <div class="card-body">
+        
+    <div class="container" >
+        <div class ="row justify-content-around" style="height:50px;">
+          <button type="button" class="btn btn-primary btn-lg" id="newGame" style="margin:1px;padding:5px;height:50px;">New Card</button>
+          <label for="popNumber" id="popNext" style="height:50px"></label>
+          <label for="popCounter" id="popCntr" style="height:50px"></label>
+          <button type="button" class="btn btn-success btn-lg" id="popNum" style="margin:1px;padding:5px;height:50px;">Pop Number</button>
+            </div>
+            </div>
+            <div class="container">
+        <div class="row" id="row1"> </div>
+        <div class="row" id="row2"> </div>
+        <div class="row" id="row3"> </div>
+        <div class="row" id="row4"> </div>
+        <div class="row" id="row5"> </div>
+    </div><!-- end of justify center-->
+</div>
+    <script src="./script.js"></script>
+</body>
+</html>
