@@ -1,3 +1,6 @@
+/* 
+Define variables that are frequently used in the code
+*/
 
 var cardRow1 = document.getElementById("row1");
 var cardRow2 = document.getElementById("row2");
@@ -14,13 +17,24 @@ var popNum = [];
 var counter = 0;
 
 
-
+/**
+ * Define event listeneres on the buttons New card and Pop Number
+ * New Card - to create a  new set of Number tiles
+ * Pop Number - to start the game and color code the matching number tile
+ * 
+ */
 
 
 document.getElementById("newGame").addEventListener("click",init);
 document.getElementById("popNum").addEventListener("click",randomNum);
 
-
+/**
+ * init() is called on page load
+ * Page is displayed with new set of number tiles
+ * resets counter, CardNumbers , popped Numbers from previous plays that are stored as localstorage objects
+ * clears the card before filling it up with new set of number tiles
+ * 
+ */
 
 function init(){
     //cardColVal.splice(0, cardColVal.length);
@@ -80,6 +94,33 @@ cardRow1.innerHTML += HTMLcreate;
 
         }// end of init
 
+
+/**
+ * 
+ * How do you start the game? by clicking the Pop Number button.
+ * Click event on pop number button calls randomNum() function
+ * grab the required local storage objects 
+ * counter - how many times pop number button is clicked
+ *  cardNum - what are the numbers on the current card generated
+ * PopNumLocal - what are the col numbers of matching number tiles
+ * 
+ *winning String - you win the game if all the number tiles in any one of the rows or columns turn green
+ so there are 10 tile combinations that fall into the winning category.
+
+ winning string is created using those tile numbers (5 by 5 card , each number tile is given a tile number starting from 1 to 25)
+ for example if we observe the first winningstring element, it is 12345. This represent the first row
+ if we observse 16111617 , 6th element of the winning string array it represents 1 row
+
+ so the winningstring elements are looped and cmpared with the gamestring
+
+ how is the gamestring generated?
+after pop number click, the random number generated is matched with the number tiles. 
+if there is a matching tile, it turns green
+the tile number (different from the number shown on the tile) is grabbed and added to the array popUp Numbers local storage item
+
+if  a number is popped more than once, it is not taken into count, counter doesn't increment, and random number is called  again automatically. 
+ * 
+ */
 
        function randomNum(){
      var counterLocal = localStorage.getItem('Counter');
